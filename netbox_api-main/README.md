@@ -11,7 +11,7 @@ _September 2021 by hessam_
 ```  You should fill the importvalues.csv with ip and iLo Name```  
 
 - Step Two  
-```  Create one API from netbox and put it on Token in Script```  
+```  Create one API from netbox and put it on Token in Script```    
 ![image](https://user-images.githubusercontent.com/35570922/142001057-8cc72905-0b03-4df7-ad29-d308ea5cfe44.png)
 
 - Step Three 
