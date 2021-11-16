@@ -1,5 +1,7 @@
 # Hp-iLo-AutoLogin_ver4
 
+![Mozilla Add-on](https://img.shields.io/amo/stars/dustman?style=plastic)
+![Wheelmap](https://img.shields.io/wheelmap/a/26699541?style=plastic)
 
 This script work on iLo4 and below, For iLo 5 you should use another script which is in my inventory.
 
