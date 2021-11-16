@@ -1,0 +1,26 @@
+<RIBCL VERSION="2.0">
+ 
+
+   <LOGIN USER_LOGIN="adminname" PASSWORD="password">
+  
+ 
+   <!--------------------------------------- Update Boot Order --------------------------------->
+	<SERVER_INFO MODE="write">
+                                    
+        <SET_PERSISTENT_BOOT>
+           <DEVICE value = "CDROM" />
+           <DEVICE value = "USB" />   
+           <DEVICE value = "HDD" />
+        </SET_PERSISTENT_BOOT>
+   </SERVER_INFO>
+   
+    
+	  
+	  
+<!--------------------------------------- ٍEND --------------------------------->
+   </LOGIN>
+
+</RIBCL>
+     
+
+
