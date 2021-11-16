@@ -1,0 +1,338 @@
+<!--
+░█████╗░██████╗░██╗░░░██╗░█████╗░███╗░░██╗  ░█████╗░██╗░░░░░░█████╗░██╗░░░██╗██████╗░
+██╔══██╗██╔══██╗██║░░░██║██╔══██╗████╗░██║  ██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗
+███████║██████╔╝╚██╗░██╔╝███████║██╔██╗██║  ██║░░╚═╝██║░░░░░██║░░██║██║░░░██║██║░░██║
+██╔══██║██╔══██╗░╚████╔╝░██╔══██║██║╚████║  ██║░░██╗██║░░░░░██║░░██║██║░░░██║██║░░██║
+██║░░██║██║░░██║░░╚██╔╝░░██║░░██║██║░╚███║  ╚█████╔╝███████╗╚█████╔╝╚██████╔╝██████╔╝
+╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝  ░╚════╝░╚══════╝░╚════╝░░╚═════╝░╚═════╝░
+
+██████╗░░█████╗░████████╗░█████╗░  ░█████╗░███████╗███╗░░██╗████████╗███████╗██████╗░
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗  ██╔══██╗██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔══██╗
+██║░░██║███████║░░░██║░░░███████║  ██║░░╚═╝█████╗░░██╔██╗██║░░░██║░░░█████╗░░██████╔╝
+██║░░██║██╔══██║░░░██║░░░██╔══██║  ██║░░██╗██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░██╔══██╗
+██████╔╝██║░░██║░░░██║░░░██║░░██║  ╚█████╔╝███████╗██║░╚███║░░░██║░░░███████╗██║░░██║
+╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝  ░╚════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+
+░██████╗███████╗██████╗░  ██████╗░░█████╗░██████╗░░░███╗░░
+██╔════╝██╔════╝██╔══██╗  ╚════██╗██╔══██╗╚════██╗░████║░░
+╚█████╗░█████╗░░██████╔╝  ░░███╔═╝██║░░██║░░███╔═╝██╔██║░░
+░╚═══██╗██╔══╝░░██╔═══╝░  ██╔══╝░░██║░░██║██╔══╝░░╚═╝██║░░
+██████╔╝███████╗██║░░░░░  ███████╗╚█████╔╝███████╗███████╗
+╚═════╝░╚══════╝╚═╝░░░░░  ╚══════╝░╚════╝░╚══════╝╚══════╝ by Hessam
+-->
+<RIBCL VERSION="2.0">
+   <LOGIN USER_LOGIN="adminname" PASSWORD="password">
+
+
+<!------------------------------ّFactory Defualt-------------------------------------------
+
+	<RIB_INFO MODE="write">
+         <FACTORY_DEFAULTS nnnnnnnnnnnnnnnnn/>
+	</RIB_INFO>
+>
+<!--------------------------------------- Server Name  --------------------------------->
+
+     <SERVER_INFO MODE="write">
+         <SERVER_NAME value ="%servername%"/>
+      </SERVER_INFO>
+  
+<!--------------------------------------- iLo Name  --------------------------------->
+  
+     <RIB_INFO MODE="write">
+   		<MOD_NETWORK_SETTINGS>
+			<DNS_NAME value="%dnsname%"/>
+		</MOD_NETWORK_SETTINGS>
+     </RIB_INFO>
+
+<!---------------------------------------Access Settings--------------------------------->
+
+    <RIB_INFO MODE="write">
+         <MOD_GLOBAL_SETTINGS>
+                <SSH_STATUS value="No"/>
+			    <SSH_PORT value="222"/>
+		    	<IPMI_DCMI_OVER_LAN_ENABLED value="n"/>
+		    	<SESSION_TIMEOUT value="15"/>
+		    	<AUTHENTICATION_FAILURE_LOGGING value="2"/>  
+		        <F8_PROMPT_ENABLED value="Yes"/>
+                <HTTP_PORT value="80"/>
+                <HTTPS_PORT value="443"/>
+                <REMOTE_CONSOLE_PORT value="17990"/>         
+                <MIN_PASSWORD value="8"/>
+                <ILO_FUNCT_ENABLED value="Yes"/>
+                <F8_LOGIN_REQUIRED value="No"/>           
+         </MOD_GLOBAL_SETTINGS>
+</RIB_INFO>
+<!------------------------------Add Licence------------------------------------------->
+      <RIB_INFO MODE="write">
+          <LICENSE>
+            <ACTIVATE KEY="34RQQ-6D5R4-G8NW3-LBMG6-MLJXR"/>
+	      </LICENSE>
+       </RIB_INFO>
+
+<!------------------------------Clear Server Power On------------------------------------------->
+	<SERVER_INFO MODE="write">
+         <CLEAR_SERVER_POWER_ON_TIME />
+      </SERVER_INFO>
+<!--------------------------------AHS Clear Data----------------------------------------->
+	  <RIB_INFO MODE="write">
+        <AHS_CLEAR_DATA/>
+     </RIB_INFO>
+<!------------------------------------Clear IML------------------------------------->
+	<SERVER_INFO MODE="write">
+         <CLEAR_IML/>
+      </SERVER_INFO>
+<!-------------------------------------Clear Ecvent  Log----------------------------------->
+	   <RIB_INFO MODE="write">
+         <CLEAR_EVENTLOG/>
+      </RIB_INFO>
+
+<!------------------------------------User Pass Add---------------------------->
+
+  <USER_INFO MODE="write">
+         <MOD_USER USER_LOGIN="administrator">
+            <USER_NAME value="administrator"/>
+            <USER_LOGIN value="administrator"/>
+            <PASSWORD value="PASSWORD"/>
+            <ADMIN_PRIV value="Yes"/>
+            <REMOTE_CONS_PRIV value="Yes"/>
+            <RESET_SERVER_PRIV value="Yes"/>
+            <VIRTUAL_MEDIA_PRIV value="Yes"/>
+            <CONFIG_ILO_PRIV value="Yes"/>  			
+         </MOD_USER>
+		 
+      </USER_INFO>
+<!----->
+	<USER_INFO MODE="write">
+         <DELETE_USER USER_LOGIN="iaas-user"/>
+    </USER_INFO>
+ 
+   <USER_INFO MODE="write">
+         <ADD_USER
+           USER_NAME="iaas-user"
+           USER_LOGIN="iaas-user"
+           PASSWORD="PASSWORD">
+            <ADMIN_PRIV value ="N"/>
+            <REMOTE_CONS_PRIV value ="Y"/>
+            <RESET_SERVER_PRIV value ="Y"/>
+            <VIRTUAL_MEDIA_PRIV value ="Y"/>            
+            <CONFIG_ILO_PRIV value="N"/>
+         </ADD_USER>
+      </USER_INFO>
+	<!----->
+	<USER_INFO MODE="write">
+         <DELETE_USER USER_LOGIN="Monitoring"/>
+    </USER_INFO>
+	
+	  <USER_INFO MODE="write">
+         <ADD_USER
+           USER_NAME="Monitoring"
+           USER_LOGIN="Monitoring"
+           PASSWORD="PASSWORD">
+            <ADMIN_PRIV value ="N"/>
+            <REMOTE_CONS_PRIV value ="N"/>
+            <RESET_SERVER_PRIV value ="N"/>
+            <VIRTUAL_MEDIA_PRIV value ="N"/>            
+            <CONFIG_ILO_PRIV value="N"/>
+         </ADD_USER>
+      </USER_INFO>
+	  
+	  <!------------  Edit Admin User--------------------------------------------------------------
+   <USER_INFO MODE="write">
+         <MOD_USER USER_LOGIN="administrator">
+            <USER_NAME value="administrator"/>
+            <USER_LOGIN value="administrator"/>
+            <PASSWORD value="password"/>
+            <ADMIN_PRIV value="Yes"/>
+            <REMOTE_CONS_PRIV value="Yes"/>
+            <RESET_SERVER_PRIV value="Yes"/>
+            <VIRTUAL_MEDIA_PRIV value="Yes"/>
+            <CONFIG_ILO_PRIV value="Yes"/>  			
+         </MOD_USER>
+		 
+      </USER_INFO>
+
+  <!----------- Delete User -------
+  
+        <USER_INFO MODE="write">
+         <DELETE_USER USER_LOGIN="iaas-user"/>
+       </USER_INFO>
+
+<!------------ Add User --------------
+
+ 
+   <USER_INFO MODE="write">
+         <ADD_USER
+           USER_NAME="object-user"
+           USER_LOGIN="object-user"
+           PASSWORD="Password">
+            <ADMIN_PRIV value ="N"/>
+            <REMOTE_CONS_PRIV value ="Y"/>
+            <RESET_SERVER_PRIV value ="Y"/>
+            <VIRTUAL_MEDIA_PRIV value ="N"/>            
+            <CONFIG_ILO_PRIV value="N"/>
+         </ADD_USER>
+      </USER_INFO>
+	  -->
+   
+     
+<!-----------------------------------Virtual port Settigns------------------------------------->
+     <RIB_INFO MODE="write">
+      <MOD_GLOBAL_SETTINGS>
+   
+      <!--  <VMEDIA_DISABLE VALUE = "No"/>	  -->
+	 
+        <VIRTUAL_MEDIA_PORT VALUE = "17988"/>
+      </MOD_GLOBAL_SETTINGS>
+    </RIB_INFO>
+   
+
+<!------------------------------POwer------------------------------------->
+
+    <SERVER_INFO MODE="write">
+         <SET_HOST_POWER_SAVER HOST_POWER_SAVER="4"/>
+    </SERVER_INFO>
+<!--
+      <SERVER_INFO MODE="write">
+         <SET_HOST_POWER HOST_POWER="No"/>
+      </SERVER_INFO>
+-->
+    <SERVER_INFO MODE="write">
+      <SERVER_AUTO_PWR VALUE=" Restore"/>
+	  <SERVER_AUTO_PWR VALUE=" Random"/>
+    </SERVER_INFO>
+
+<!-------------------------------------IP Configturation Static---------------------------------->
+
+     <RIB_INFO MODE="write">
+         <MOD_NETWORK_SETTINGS>           
+         
+		 <ENABLE_NIC value="Yes"/>
+            <REG_DDNS_SERVER value="No"/>
+            <PING_GATEWAY value="Yes"/>
+            <SPEED_AUTOSELECT value="YES"/>
+            <NIC_SPEED value="100"/>
+            <FULL_DUPLEX value="Yes"/>    
+            <DHCP_DNS_SERVER value="No"/>
+            <DHCP_WINS_SERVER value="No"/>
+            <DHCP_STATIC_ROUTE value="No"/>
+            <REG_WINS_SERVER value="No"/>
+			
+		
+			
+			<IPV6_REG_DDNS_SERVER VALUE="No"/>
+			<IPV6_ADDR_AUTOCFG VALUE="N"/>
+			 <IPV6_PREFERRED_PROTOCOL VALUE="N"/>
+			<IPV6_ADDRESS VALUE="FC00:DB8:2:2::15"
+                          PREFIXLEN="64"
+                          ADDR_SOURCE="STATIC"
+                          ADDR_STATUS="INACTIVE"/>
+
+			<IPV6_STATIC_ROUTE_1
+                          IPV6_DEST="::"
+                          PREFIXLEN="0"
+                          IPV6_GATEWAY="::"
+                          ADDR_STATUS="INACTIVE"/>
+            <IPV6_STATIC_ROUTE_2
+                          IPV6_DEST="::"
+                          PREFIXLEN="0"
+                          IPV6_GATEWAY="::"
+                          ADDR_STATUS="INACTIVE"/>
+            <IPV6_STATIC_ROUTE_3
+                          IPV6_DEST="2001:DB8:2002:3003::"
+                          PREFIXLEN="64"
+                          IPV6_GATEWAY="2001:DB8:1::40"
+                          ADDR_STATUS="INACTIVE"/>
+
+			<DHCPV6_STATELESS_ENABLE VALUE="N"/>
+            <DHCPV6_STATEFUL_ENABLE VALUE="N"/>
+            <DHCPV6_RAPID_COMMIT VALUE="N"/>
+            <DHCPV6_SNTP_SETTINGS VALUE="N"/>
+            <DHCPV6_DNS_SERVER VALUE="N"/>
+			<DHCPV6_DOMAIN_NAME VALUE="N"/>
+			<SHARED_NETWORK_PORT VALUE="N"/> 
+			
+		</MOD_NETWORK_SETTINGS>
+ </RIB_INFO>
+
+
+
+<!--------------------------------------- LEGACY --------------------------------->
+    
+	 <SERVER_INFO MODE="write">  
+   <!-- <SET_HOST_POWER HOST_POWER="No"/>		 -->
+        </SERVER_INFO>
+     <SERVER_INFO MODE="write">	 
+        <SET_PENDING_BOOT_MODE VALUE="LEGACY"/>
+	</SERVER_INFO>
+     <SERVER_INFO MODE="write">    
+	
+      <!--  <SET_HOST_POWER HOST_POWER="Yes"/>	  -->
+   </SERVER_INFO>
+ 
+ <!-------------------------------------- Boot Order --------------------------------->
+  
+     <SERVER_INFO MODE="write">
+                                    
+     <SET_PERSISTENT_BOOT>
+     
+      <DEVICE value = "CDROM" />
+      <DEVICE value = "USB" />
+      <DEVICE value = "HDD" />
+      <DEVICE value = "NETWORK" />
+     </SET_PERSISTENT_BOOT>
+   </SERVER_INFO>
+   
+
+
+
+
+
+
+<!---------------------------------------SNMP Setiings--------------------------------->
+ <RIB_INFO MODE="write">
+    <MOD_SNMP_IM_SETTINGS>
+   
+		    <SNMP_ADDRESS_1_ROCOMMUNITY VALUE="SNMPCOMMUNITYHERE"/>
+		 <!--   <COLD_START_TRAP_BROADCAST value="No"/>
+		    <SNMP_V1_TRAPS VALUE="No"/>
+	  <SNMP_USER_PROFILE INDEX = "1">
+           <SECURITY_NAME VALUE="DC-Arvan-Snmp"/> 
+           <AUTHN_PROTOCOL VALUE="1"/>
+           <AUTHN_PASSPHRASE VALUE="PASSWORD"/>
+           <PRIVACY_PROTOCOL VALUE="1"/>
+           <PRIVACY_PASSPHRASE VALUE="PASSWORD"/>
+		 <SNMP_PORT value="1922"/>  
+		 <SNMP_TRAP_PORT value="1923"/>
+       </SNMP_USER_PROFILE>
+		-->
+		
+    </MOD_SNMP_IM_SETTINGS>
+</RIB_INFO>
+
+
+<!---------------------------------------Discovery--------------------------------->
+ 
+     <RIB_INFO MODE="write">
+      <SET_FEDERATION_MULTICAST>
+         <MULTICAST_DISCOVERY_ENABLED VALUE="No"/>
+		   <MULTICAST_TTL VALUE="255"/>
+		 </SET_FEDERATION_MULTICAST>
+		 <DELETE_FEDERATION_GROUP GROUP_NAME="DEFAULT"/>
+		 
+    </RIB_INFO>
+
+
+<!---------------------------------------Firmware Update ---------------------------------->
+
+
+ <RIB_INFO MODE="write">
+  
+         <TPM_ENABLED VALUE="Yes"/>
+         <UPDATE_FIRMWARE IMAGE_LOCATION="c:/ilo4_278.bin"/>
+		 
+      </RIB_INFO>
+
+<!--------------------------------------- ٍEND --------------------------------->
+ </LOGIN>
+   
+</RIBCL>

@@ -1,0 +1,26 @@
+<RIBCL VERSION="2.0">
+  <LOGIN USER_LOGIN="adminname" PASSWORD="password"> 
+   
+    <SERVER_INFO MODE="write">
+            <SET_HOST_POWER_SAVER HOST_POWER_SAVER="4"/>
+      </SERVER_INFO>
+<!--  power ON or Off
+
+
+     <SERVER_INFO MODE="write">
+         
+         <SET_HOST_POWER HOST_POWER="yes"/>
+      </SERVER_INFO>
+-->
+
+
+  
+<SERVER_INFO MODE="write">
+  
+      <SERVER_AUTO_PWR VALUE=" Restore"/>
+	  <SERVER_AUTO_PWR VALUE=" Random"/>
+    </SERVER_INFO>
+	
+    </LOGIN>
+	 
+</RIBCL>

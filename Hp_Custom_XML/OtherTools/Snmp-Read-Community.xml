@@ -1,0 +1,14 @@
+<RIBCL VERSION="2.0">
+  <LOGIN USER_LOGIN="adminname" PASSWORD="password"> 
+   <RIB_INFO MODE="write">
+    <MOD_SNMP_IM_SETTINGS>
+   
+		<SNMP_ADDRESS_1_ROCOMMUNITY VALUE="Cummunity_is_here"/>
+
+		
+		
+    </MOD_SNMP_IM_SETTINGS>
+	</RIB_INFO>
+    </LOGIN>
+	 
+</RIBCL>
