@@ -14,7 +14,7 @@ _September 2021 by hessam_
 - Step Two  
 ```  Create one API from netbox and put it on Token in Script```    
 
-- Step Three 
+- Step Three   
 ```  Run the python Script and Have Fun```
 
 
