@@ -9,7 +9,7 @@ _September 2021 by hessam_
 
 
 - Step One  
-```  You should fill the importvalues.csv with ip and iLo Name```  
+```  You should fill the importvalues.csv that located in the main directory behind Netbox_add_ip.py with ip and iLo Name```  
 
 - Step Two  
 ```  Create one API from netbox and put it on Token in Script```    
