@@ -16,10 +16,10 @@ _September 2021 by hessam_
 
 
 - Step One  
-```  You should fill the Textbox which is needed```   
+```  You should fill the Textbox which is needed and located in the main directory```   
 
 - Step Two  
-```  Fill the text files on the Project with IP and iLoName and DNSName```    
+``` Open http://127.0.0.1:3000/docs by browser and fill the text files on the Project with IP and iLoName and DNSName```    
 
 - Step Two  
 ```  Run the execute Button to make the commands then copy it and run on the CMD or POWERSHELL```    
