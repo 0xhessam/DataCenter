@@ -1,0 +1,10 @@
+:local output ""
+:local filename "ip_address.txt";
+
+:foreach i in=[/ip dhcp-server lease find] do={  
+:set output ($output . [/ip dhcp-server lease get $i address] ."\n");
+
+}
+/file print file=$filename;
+:delay 1;
+/file set [/file find name=$filename] contents=$output;
